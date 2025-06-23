@@ -30,4 +30,4 @@ jobs:
         uses: jpbnetley/semantic-release-version@main
         with:
           version: 0.0.1
-          version-type: ${{ github.event.inputs.version }}
+          version-type: "${{ github.event.inputs.version }}"

@@ -1,5 +1,16 @@
 name: Build version
-on: workflow_dispatch
+on: 
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'Version to update major.minor.patch'
+        required: true
+        type: choice
+        options:
+          - patch
+          - minor
+          - major
+
 
 permissions:
   contents: write
@@ -15,4 +26,4 @@ jobs:
         uses: jpbnetley/semantic-release-version@v0.0.2
         with:
           version: 0.0.1
-          version-type: patch
+          version-type: ${{ github.event.inputs.version }}

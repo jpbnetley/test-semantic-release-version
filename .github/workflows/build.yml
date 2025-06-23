@@ -21,6 +21,10 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+        
+      - name: debug
+        run: |
+         echo debug v: ${{ github.event.inputs.version }}
 
       - name: test version
         uses: jpbnetley/semantic-release-version@main

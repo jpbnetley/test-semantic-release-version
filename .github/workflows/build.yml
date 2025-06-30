@@ -34,4 +34,5 @@ jobs:
           version-type: "${{ github.event.inputs.version }}"
 
       - name: new version
-        run: echo "new version is: ${{ steps.version.outputs.new-version }}"
+        run: |
+          echo "new version is: ${{ steps.version.outputs.new-version }}"

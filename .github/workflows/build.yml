@@ -28,6 +28,10 @@ jobs:
 
       - name: test version
         uses: jpbnetley/semantic-release-version@main
+        id: version
         with:
           version: 0.0.1
           version-type: "${{ github.event.inputs.version }}"
+
+      - name: new version
+        run: echo "new version is: ${{ steps.version.outputs.new-version }}"
